@@ -51,6 +51,7 @@ Input 3D SFS, output pdf name without extention, then angles phi and theta.
 ## Examples
 
 Provide simulated files.
+How to get window coordinates?
 
 
 
