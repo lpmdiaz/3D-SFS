@@ -10,6 +10,14 @@
 
 ### To compile
 
+**Windows users** Can use CodeBlocks software to run and compile .cpp file.
+
+**Mac users** Use XCode.
+
+Would recommend using a virtual machine.
+
+**Unix users**
+
 	g++ -Wall 3D_SFS_to_log_likelihood_ratio.cpp -o CLRT
 
 
