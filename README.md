@@ -1,6 +1,11 @@
 # 3D-SFS
 *Detecting positive selection from multidimensional site frequency spectra*
 
+**To install**
+
+	git clone https://github.com/lpmdiaz/3D-SFS
+	cd ./3D-SFS
+
 **To compile**
 
 	g++ -Wall 3D_SFS_to_log_likelihood_ratio.cpp -o CLRT
