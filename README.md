@@ -1,5 +1,5 @@
 # 3D-SFS
-*Detecting positive selection from multidimensional site frequency spectra*
+*Detecting positive selection from multidimensional site frequency spectra.*
 
 ## Set up
 
