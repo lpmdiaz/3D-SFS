@@ -3,8 +3,8 @@
 
 **To install**
 
-	git clone https://github.com/lpmdiaz/3D-SFS
-	cd ./3D-SFS
+	git clone https://github.com/lpmdiaz/pop3D
+	cd ./pop3D
 
 **To compile**
 
