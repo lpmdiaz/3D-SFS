@@ -24,9 +24,9 @@ The 3D global SFS file must be called "ms.3d.sfs", the 3D windows SFS file must 
 ### Plotting
 
 **CLRT**
-The *plotclrt.R* file takes the output of *pop3Dclrt* as an input and plots the CLRT in a pdf. This script takes in arguments the input CLRT file and the output pdf name (note: the extension will be added by default). Example:
+The *plotclrt.R* file takes the output of *pop3Dclrt* as an input and plots the CLRT in a pdf. This script takes in arguments the input CLRT file and the output pdf name (note: the extension will be added by default), as well as the pdf width and height parameters. Example:
 
-	Rscript plotclrt.R clrt CLRT
+	Rscript plotclrt.R clrt CLRT 14 7
 
 This command will create the *CLRT.pdf* file containing the plotted CLRT.
 
