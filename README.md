@@ -48,7 +48,9 @@ Input 3D SFS, output pdf name without extention, then angles phi and theta.
 
 	Rscript clrt3pop.R Data/ms.3d.windows.sfs Data/ms.3d.sfs > CLRT.txt
 
+## Examples
 
+Provide simulated files.
 
 
 
