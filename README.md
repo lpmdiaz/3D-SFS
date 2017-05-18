@@ -39,6 +39,7 @@ The *plotclrt.R* file takes the output of *pop3Dclrt* as an input and plots the 
 This command will create the *CLRT.pdf* file containing the plotted CLRT.
 
 **3D SFS**
+First need to use the *parse3Dsfs.cpp* program to make a file the R script can use. Parameters are input file, output name, and the three population sizes.
 Input 3D SFS, output pdf name without extention, then angles phi and theta.
 
 
