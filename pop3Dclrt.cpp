@@ -1,3 +1,8 @@
+/*
+program to compute the CLRT from 3D SFS
+input is a global 3D sfs  file and the corresponding local windows 3D sfs file
+*/
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -8,8 +13,8 @@
 using namespace std;
 
 
-void line_to_vector (string line, vector<double> & v)   // parse a string line
-{                                                       // to a vector of doubles
+// parse a string line to a vector of doubles
+void line_to_vector (string line, vector<double> & v) {
     stringstream ssline(line); double d;
     while(ssline >> d)
     {
@@ -17,14 +22,14 @@ void line_to_vector (string line, vector<double> & v)   // parse a string line
     }
 }
 
-void zero_freq_remove (vector<double> & v)  // remove the first and last
-{                                           // values from the input vector
+// remove the first and last values from the input vector
+void zero_freq_remove (vector<double> & v) {
     v.erase(v.begin() + 0);
     v.erase(v.begin() + v.size()-1);
 }
 
-double calculate_help_fact (double globalSNPsnr)
-{
+// help factor calculation for window SFS scaling
+double calculate_help_fact (double globalSNPsnr) {
     double help_fact;
     double windowsSNPsnr;
     int windowsnr = 0; // will count the number of windows in the windows SFS file
@@ -48,38 +53,56 @@ double calculate_help_fact (double globalSNPsnr)
     return help_fact;
 }
 
-
-double calculate_CL (vector<double> & v, double & nrSNPs, double & help_fact)    // composite likelihood calculation
-{
+// composite likelihood calculation
+double calculate_CL (vector<double> & v, double & nrSNPs, double & help_fact) {
     double CL = 0; double pk = 0; // the CL will be the sum of all p^k values
-
-    for (int i = 0; i < v.size(); i++)
-    {
+    for (int i = 0; i < v.size(); i++) {
         pk = log( pow((v[i]/nrSNPs), v[i]/help_fact) ); // log transformation
         CL+=pk;
     }
     return CL;
 }
 
-double calculate_CLRT (double X, double Y)  // CLRT calculation
-{
+// CLRT calculation
+double calculate_CLRT (double X, double Y) {
     double CLRT;
     CLRT = 2*(X-Y);
     return CLRT;
 }
 
+// help printout
+void info() {
+    fprintf(stderr,"\t -> Required arguments:\n");
+    fprintf(stderr,"\t\tGlobal 3D SFS file path\n");
+    fprintf(stderr,"\t\tWindows 3D SFS file path\n");
+    fprintf(stderr,"\t\tOutput file name\n");
+}
 
-int main (void)
-{
-    // SETTING FILE NAMES
-    string global_sfs_file, windows_sfs_file;
-    global_sfs_file = "ms.3d.sfs";
-    windows_sfs_file = "ms.3d.windows.sfs";
+
+//                //
+//      MAIN      //
+//                //
+
+int main (int argc, char *argv[]) {
+
+    // CHECKING CORRECT ARGUMENT NUMBER
+    if (argc < 4) {
+        cout << "Error: not enough arguments!";
+        return 0; // terminate
+    }
 
     // OPENING FILES, SETTING VARIABLES
-    ifstream global_sfs (global_sfs_file.c_str());      // input files (the global
-    ifstream windows_sfs (windows_sfs_file.c_str());    // and windows SFS files)
-    ofstream clrt_output("composite.log.likelihood.ratio", ios::trunc); // output file to store test results
+    ifstream global_sfs (argv[1]);      // input files (the global
+    ifstream windows_sfs (argv[2]);     // and windows SFS files)
+    if ( !global_sfs.is_open() ) { // checking that the first file was successfully open
+        cout<<"Could not open the global SFS file\n";
+        return 0; // terminate
+    }
+    if ( !windows_sfs.is_open() ) { // checking that the second file was successfully open
+        cout<<"Could not open the windows SFS file\n";
+        return 0; // terminate
+    }
+    ofstream clrt_output(argv[3], ios::trunc); // output file to store test results
     string line;        // string to store each line of the files
     vector<double> sfs; // vector to store the elements of each line
     double global_CL;   // double to store the global CL value
@@ -108,7 +131,7 @@ int main (void)
         sfs.clear();
     }
 
-    // CLEANING UP
+    // CLOSING FILES
     global_sfs.close();
     windows_sfs.close();
     clrt_output.close();
