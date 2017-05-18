@@ -30,6 +30,11 @@ The *plotclrt.R* file takes the output of *pop3Dclrt* as an input and plots the 
 
 This command will create the *CLRT.pdf* file containing the plotted CLRT.
 
+**3D SFS**
+Input 3D SFS, output pdf name without extention, then angles phi and theta.
+
+
+	Rscript plot3Dsfs.R parsed3Dsfs 3Dsfs 40 40
 
 ### Rscript
 
