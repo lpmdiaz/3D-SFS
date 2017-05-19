@@ -43,12 +43,10 @@ void sfs_parsing (ifstream & index, ofstream & output, vector<double> & v) {
 
 // help printout
 void info() {
-    fprintf(stderr,"\t -> Required arguments:\n");
-    fprintf(stderr,"\t\tInput file path\n");
-    fprintf(stderr,"\t\tOutput file name\n");
-    fprintf(stderr,"\t\tThe size of each population\n");
-    fprintf(stderr,"\t -> Optional argument:\n");
-    fprintf(stderr,"\t\tSpecific window to parse\n");
+    fprintf(stderr,"Required arguments:\tInput file path\n");
+    fprintf(stderr,"\t\t\tOutput file name\n");
+    fprintf(stderr,"\t\t\tThe size of each population\n");
+    fprintf(stderr,"Optional argument:\tSpecific window to parse\n");
 }
 
 
