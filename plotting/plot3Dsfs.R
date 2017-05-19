@@ -30,7 +30,7 @@ sfs[sfs == 0] <- NA
 # remove values under 0.1
 sfs[sfs <= 0.1] <- NA
 
-pdf(file=paste(output, "pdf", sep=""))
+pdf(file=paste(output, ".pdf", sep=""))
 
 # 3D SFS PLOTTING
 # colvar = NULL prevents colouring from z var
