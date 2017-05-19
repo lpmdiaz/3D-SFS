@@ -91,7 +91,7 @@ int main (int argc, char *argv[]) {
     
     // CHECKING CORRECT ARGUMENT NUMBER
     if (argc < 4) {
-        cout << "Error: not enough arguments!\n";
+        cout << "Error: not enough arguments\n";
         return 0; // terminate
     }
 
