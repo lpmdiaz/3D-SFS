@@ -58,6 +58,12 @@ void info() {
 
 int main (int argc, char *argv[]) {
 
+    // HELP PRINTOUT
+    if (argc==1) {
+        info();
+        return 0;
+    }
+ 
     // CHECKING CORRECT ARGUMENT NUMBER
     if (argc < 6) {
         cout << "Error: not enough arguments";
