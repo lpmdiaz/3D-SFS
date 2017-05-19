@@ -1,8 +1,8 @@
 # indicate which compiler to use
-CC ?= g++
+CCX ?= g++
 
 # compiler options
-CFLAGS ?= -Wall
+CFLAGS = -Wall
 
 # set second directory
 DIR=./plotting
@@ -13,7 +13,7 @@ LIST=pop3Dclrt $(DIR)/parse3Dsfs
 all: $(LIST)
 
 $(LIST):
-	$(CC) $(CFLAGS) $@.cpp -o $@
+	$(CCX) $(CFLAGS) $@.cpp -o $@
 
-clean:
-	@rm -rf $(LIST) *.o
+#clean:
+#	@rm -rf $(LIST) *.o
