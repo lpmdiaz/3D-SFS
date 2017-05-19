@@ -1,13 +1,13 @@
 # pop3D
 *Detecting positive selection from multidimensional site frequency spectra.*  
+  
 This software detects positive selection in three populations using the Composite Likelihood Ratio Test (CLRT) as a test for selection. It requires two 3D SFS files in input, as follows:
 
-+ A *global* SFS file containing the SFS of the whole genomic region;
-+ A *windows* SFS file containing the SFS of windows of the global file. This approach allows to perform the CLRT test as a sliding window.
++ a *global* SFS file containing the SFS of the whole genomic region;
++ a *windows* SFS file containing the SFS of windows of the global file. This approach allows to perform the CLRT test as a sliding window.
 
 Note: this software is integrated within a pipeline allowing the simulation of genomic data (with [MSMS](http://www.mabs.at/ewing/msms/index.shtml)) and the estimation of the 3D SFS (both global and windows, with [ANGSD](http://www.popgen.dk/angsd/index.php/ANGSD)). This is described in the pipeline file.
-
-***
+  
 
 ## Set up
 
@@ -22,8 +22,7 @@ On Unix machines, you can install and compile the software by doing:
 ### Other operating systems
 
 We would recommend using a virtual machine running a Unix OS (such as [Oracle VM VirtualBox](https://www.virtualbox.org/)). Alternatively, **Windows** users can use the [CodeBlocks](http://www.codeblocks.org/) software to run and compile the C++ files to executables. **Mac** users should similarly use XCode.
-
-***
+  
 
 ## Use
 
@@ -65,12 +64,13 @@ creates an indexed 3D SFS file called *parsed3Dsfs* of the 42nd window, with spe
 	Rscript plot3Dsfs.R parsed3Dsfs 3Dsfs 40 40
 
 does blah blah blah.
-
-***
+  
 
 ### Rscript
 
 	Rscript clrt3pop.R Data/ms.3d.windows.sfs Data/ms.3d.sfs > CLRT.txt
+  
+
 
 ## Examples
 
