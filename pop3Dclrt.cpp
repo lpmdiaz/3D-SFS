@@ -85,9 +85,14 @@ void info() {
 
 int main (int argc, char *argv[]) {
 
+    if (argc==1) {
+        info();
+        return 0;
+    }
+    
     // CHECKING CORRECT ARGUMENT NUMBER
     if (argc < 4) {
-        cout << "Error: not enough arguments!";
+        cout << "Error: not enough arguments!\n";
         return 0; // terminate
     }
 
