@@ -13,7 +13,7 @@ LIST=pop3Dclrt $(DIR)/parse3Dsfs
 all: $(LIST)
 
 $(LIST):
-  $(CC) $(CFLAGS) $@.cpp -o $@
+	$(CC) $(CFLAGS) $@.cpp -o $@
 
 clean:
-  @rm -rf $(LIST) *.o
+	@rm -rf $(LIST) *.o
