@@ -1,5 +1,5 @@
 # pop3D
-*Detecting positive selection from multidimensional site frequency spectra.*
+*Detecting positive selection from multidimensional site frequency spectra.*  
 This software detects positive selection in three populations using the Composite Likelihood Ratio Test (CLRT) as a test for selection. It requires two 3D SFS files in input, as follows:
 
 + A *global* SFS file containing the SFS of the whole genomic region;
@@ -21,7 +21,7 @@ On Unix machines, you can install and compile the software by doing:
 
 ### Other operating systems
 
-We would recommend using a virtual machine running a Unix OS (such as [Oracle VM VirtualBox](https://www.virtualbox.org/). Alternatively, **Windows** users can use the [CodeBlocks](http://www.codeblocks.org/) software to run and compile the C++ files to executables. **Mac** users should similarly use XCode.
+We would recommend using a virtual machine running a Unix OS (such as [Oracle VM VirtualBox](https://www.virtualbox.org/)). Alternatively, **Windows** users can use the [CodeBlocks](http://www.codeblocks.org/) software to run and compile the C++ files to executables. **Mac** users should similarly use XCode.
 
 ***
 
