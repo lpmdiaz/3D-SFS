@@ -18,7 +18,7 @@ Would recommend using a virtual machine.
 
 **Unix users**
 
-	g++ -Wall 3D_SFS_to_log_likelihood_ratio.cpp -o CLRT
+	make
 
 
 ## Use
