@@ -14,6 +14,3 @@ all: $(LIST)
 
 $(LIST):
 	$(CCX) $(CFLAGS) $@.cpp -o $@
-
-#clean:
-#	@rm -rf $(LIST) *.o
