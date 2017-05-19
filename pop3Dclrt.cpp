@@ -29,7 +29,7 @@ void zero_freq_remove (vector<double> & v) {
 }
 
 // help factor calculation for window SFS scaling
-double calculate_help_fact (double globalSNPsnr) {
+double calculate_help_fact (double globalSNPsnr, int argc, char *argv[]) {
     double help_fact;
     double windowsSNPsnr;
     int windowsnr = 0; // will count the number of windows in the windows SFS file
