@@ -64,14 +64,14 @@ int main (int argc, char *argv[]) {
  
     // CHECKING CORRECT ARGUMENT NUMBER
     if (argc < 6) {
-        cout << "Error: not enough arguments";
+        cout << "Error: not enough arguments\n";
         return 0; // terminate
     }
 
     // SETTING UP FILE NAMES AND VARIABLES
     ifstream sfs_file (argv[1]); // opening input file
     if ( !sfs_file.is_open() ) {        // checking that the file was successfully open
-        cout<<"Could not open file\n";
+        cout<<"Could not open 3D SFS file\n";
         return 0; // terminate
     }
     string line; // string to store each line of the SFS
