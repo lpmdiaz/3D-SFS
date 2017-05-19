@@ -8,7 +8,7 @@ rm(args)
 
 mydata <- read.table(input)
 
-pdf(file=paste(output, "pdf", sep=""), width = widtharg, height = heightarg)
+pdf(file=paste(output, ".pdf", sep=""), width = widtharg, height = heightarg)
 
 par(tcl=0.4)
 plot(mydata[,1], type = "n", xlab = "windows", ylab = "CLRT")
