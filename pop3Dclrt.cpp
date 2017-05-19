@@ -126,6 +126,7 @@ int main (int argc, char *argv[]) {
     double help_fact = calculate_help_fact(globalSNPsnr);
     cout << "Help factor for debugging purposes (should be 99.9385): " << help_fact << "\n"; ///////////////////////////////////////////
     global_CL = calculate_CL(sfs, globalSNPsnr, help_fact);
+    cout << "Global CL = " << global_CL << "\n"; ///////////////////////////////////////////////////////////////////////////////////////
     sfs.clear();
 
     // CALCULATE WINDOWS CL, CALCULATE AND STORE THE CL RATIO TEST RESULT
