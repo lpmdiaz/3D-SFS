@@ -29,14 +29,13 @@ void zero_freq_remove (vector<double> & v) {
 }
 
 // help factor calculation for window SFS scaling
-double calculate_help_fact (double globalSNPsnr, int argc, char *argv[]) {
+double calculate_help_fact (double globalSNPsnr, string filepath) {
     double help_fact;
     double windowsSNPsnr;
     int windowsnr = 0; // will count the number of windows in the windows SFS file
     string line;        // string to store each line of the files
     vector<double> sfs; // vector to store the elements of each line
-    string windows_sfs_file = "ms.3d.windows.sfs";
-    ifstream windows_sfs (argv[2]); // input windows SFS
+    ifstream windows_sfs (filepath); // input windows SFS file
 
     // GET WINDOWS SNPs NUMBER
     while (getline(windows_sfs, line)) // read windows SFS file line by line
@@ -123,7 +122,7 @@ int main (int argc, char *argv[]) {
     cout << "Checking SFS values: " << sfs[41] << " " << sfs[42] << " " << sfs[43] << "\n"; ////////////////////////////////////////////
     double globalSNPsnr = 0; for (int i = 0; i < sfs.size(); i++) globalSNPsnr += sfs[i]; // number of SNPs in global SFS
     cout << "Global SNPs number: " << globalSNPsnr << "\n"; ////////////////////////////////////////////////////////////////////////////
-    double help_fact = calculate_help_fact(globalSNPsnr);
+    double help_fact = calculate_help_fact(globalSNPsnr, argv[2]);
     cout << "Help factor for debugging purposes (should be 99.9385): " << help_fact << "\n"; ///////////////////////////////////////////
     global_CL = calculate_CL(sfs, globalSNPsnr, help_fact);
     cout << "Global CL = " << global_CL << "\n"; ///////////////////////////////////////////////////////////////////////////////////////
