@@ -120,8 +120,9 @@ int main (int argc, char *argv[]) {
     zero_freq_remove(sfs); // remove first and last SFS values
     double globalSNPsnr = 0; for (int i = 0; i < sfs.size(); i++) globalSNPsnr += sfs[i]; // number of SNPs in global SFS
     double help_fact = calculate_help_fact(globalSNPsnr);
+    cout << help_fact << "\n"; ///////////////////////
     global_CL = calculate_CL(sfs, globalSNPsnr, help_fact);
-    cout << global_CL << "\n"; //////////////////////////////////////////
+    //cout << global_CL << "\n"; ////////////////////////////////////////// -nan
     sfs.clear();
 
     // CALCULATE WINDOWS CL, CALCULATE AND STORE THE CL RATIO TEST RESULT
@@ -135,7 +136,7 @@ int main (int argc, char *argv[]) {
         CLRT = calculate_CLRT(windows_CL, global_CL);
         clrt_output << setprecision(10) << CLRT << " \n";
         sfs.clear();
-        cout << CLRT << " "; ////////////////////////////////////////////
+        //cout << CLRT << " "; //////////////////////////////////////////// -nan
     }
 
     // CLOSING FILES
