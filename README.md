@@ -1,5 +1,4 @@
-# pop3D
-*Detecting positive selection from multidimensional site frequency spectra.*  
+# pop3D: detecting positive selection from multidimensional site frequency spectra
   
 This software detects positive selection in three populations using the Composite Likelihood Ratio Test (CLRT) as a test for selection. It requires two 3D SFS files in input, as follows:
 
@@ -60,7 +59,7 @@ creates an indexed 3D SFS file called *parsed3Dsfs* of the 42nd window, with spe
 
 	Rscript plot3Dsfs.R parsed3Dsfs 3Dsfs 40 40
 
-does blah blah blah.
+does blah blah blah. Note that this program requires the *plot3D* R package.
 
 ### Rscript
 
