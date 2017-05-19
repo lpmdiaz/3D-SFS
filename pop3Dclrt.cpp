@@ -36,7 +36,7 @@ double calculate_help_fact (double globalSNPsnr) {
     string line;        // string to store each line of the files
     vector<double> sfs; // vector to store the elements of each line
     string windows_sfs_file = "ms.3d.windows.sfs";
-    ifstream windows_sfs (windows_sfs_file.c_str()); // input windows SFS
+    ifstream windows_sfs (argv[2]); // input windows SFS
 
     // GET WINDOWS SNPs NUMBER
     while (getline(windows_sfs, line)) // read windows SFS file line by line
