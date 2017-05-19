@@ -20,7 +20,7 @@ On Unix machines, you can install and compile the software by doing:
 
 ### Other operating systems
 
-We would recommend using a virtual machine running a Unix OS (such as [Oracle VM VirtualBox](https://www.virtualbox.org/)). Alternatively, **Windows** users can use the [CodeBlocks](http://www.codeblocks.org/) software to run and compile the C++ files to executables. In a similar way, **Mac** users should use XCode.
+We would recommend using a virtual machine running a Unix OS (such as [Oracle VM VirtualBox](https://www.virtualbox.org/) running [Ubuntu](https://www.ubuntu.com/download/desktop)). Alternatively, **Windows** users can use the [CodeBlocks](http://www.codeblocks.org/) software to run and compile the C++ files to executables. In a similar way, **Mac** users should use XCode.
 
 ## Use
 
