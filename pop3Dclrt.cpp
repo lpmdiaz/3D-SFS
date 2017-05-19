@@ -85,6 +85,7 @@ void info() {
 
 int main (int argc, char *argv[]) {
 
+    // HELP PRINTOUT
     if (argc==1) {
         info();
         return 0;
