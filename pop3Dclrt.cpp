@@ -116,13 +116,14 @@ int main (int argc, char *argv[]) {
 
     // CALCULATE THE GLOBAL COMPOSITE LIKELIHOOD
     getline(global_sfs, line); // retrieving the first and only line of the
+    cout << "Global SFS line: "<< line << "\n"; ////////////////////////////////////////////////////////////////////////////////////////
     line_to_vector(line, sfs); // global SFS file and storing it into a vector
+    cout << "Checking SFS value: " << sfs[42] << "\n"; /////////////////////////////////////////////////////////////////////////////////
     zero_freq_remove(sfs); // remove first and last SFS values
     double globalSNPsnr = 0; for (int i = 0; i < sfs.size(); i++) globalSNPsnr += sfs[i]; // number of SNPs in global SFS
     double help_fact = calculate_help_fact(globalSNPsnr);
-    cout << help_fact << "\n"; ///////////////////////
+    cout << "Help factor for debugging purposes (should be 99.9385): " << help_fact << "\n"; ///////////////////////////////////////////
     global_CL = calculate_CL(sfs, globalSNPsnr, help_fact);
-    //cout << global_CL << "\n"; ////////////////////////////////////////// -nan
     sfs.clear();
 
     // CALCULATE WINDOWS CL, CALCULATE AND STORE THE CL RATIO TEST RESULT
