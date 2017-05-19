@@ -72,10 +72,9 @@ double calculate_CLRT (double X, double Y) {
 
 // help printout
 void info() {
-    fprintf(stderr,"Required arguments:\n");
-    fprintf(stderr,"\t\tGlobal 3D SFS file path\n");
-    fprintf(stderr,"\t\tWindows 3D SFS file path\n");
-    fprintf(stderr,"\t\tOutput file name\n");
+    fprintf(stderr,"Required arguments:\tGlobal 3D SFS file path\n");
+    fprintf(stderr,"\t\t\tWindows 3D SFS file path\n");
+    fprintf(stderr,"\t\t\tOutput file name\n");
 }
 
 
