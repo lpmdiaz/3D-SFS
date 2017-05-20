@@ -9,11 +9,11 @@ heightarg=as.numeric(args[4])
 
 if (length(args) < 1) { # help printout
 
-  print(sprintf("Required arguments:\n"))
-  print("    Input CLRT file path")
-  print("    Output file name without extension")
+  print(Required arguments:)
+  print("-> Input CLRT file path")
+  print("-> Output file name without extension")
   print("Optional arguments:")
-  print("    pdf output width and height (recommended: 14 and 7)")
+  print("->pdf output width and height (recommended: 14 and 7)")
 
 } else { # rest of the program
   
