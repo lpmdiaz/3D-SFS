@@ -56,13 +56,13 @@ if (length(args) < 1) { # help printout
   dev.off()
 
   # option to produce an interactive plot of the 3D SFS
-  cat("Produce an interactive 3D SFS plot? [y/n]\n")
+  cat("Produce an interactive 3D SFS plot? [y/n] ")
   choice <- readLines(file("stdin"),1)
 
   if (choice == "y") {
 
     # install and load packages for interactive plotting
-    if(!require(rgl)) {install.packages("rgl"); require(rgl)}
+    if(!require(rgl)) {install.packages("rgl", repos = "http://cran.us.r-project.org"); require(rgl)}
     if(!require(plot3Drgl)) {install.packages("plot3Drgl", repos = "http://cran.us.r-project.org"); require(plot3Drgl)}
 
     # interactive plotting
