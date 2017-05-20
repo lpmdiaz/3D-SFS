@@ -21,7 +21,7 @@ if (length(args) < 1) { # help printout
     stop("input file does not exist")
   }
 
-  if (length(args) == 3) { # setting default pdf size values
+  if (length(args) <= 3) { # setting default pdf size values
     widtharg=14
     heightarg=7
   }
