@@ -61,7 +61,7 @@ int main (int argc, char *argv[]) {
         info();
         return 0;
     }
- 
+
     // CHECKING CORRECT ARGUMENT NUMBER
     if (argc < 6) {
         cout << "Error: not enough arguments\n";
@@ -80,9 +80,9 @@ int main (int argc, char *argv[]) {
 
     // CREATING THE 3D SFS INDEX (3D COORDINATES)
     ofstream index ("3D.coordinates", ios::trunc); // temp file to stock 3D coordinates
-    istringstream ss1(argv[3]); // instruction to convert
-    istringstream ss2(argv[4]); // population size arguments
-    istringstream ss3(argv[5]); // to integers
+    istringstream ss1(argv[3]); // convert each input
+    istringstream ss2(argv[4]); // population size argument
+    istringstream ss3(argv[5]); // to integer
     int pop1; int pop2; int pop3; // population sizes
     if (!(ss1 >> pop1)) { // check that have a size for population 1
         cout << "Invalid number " << argv[3] << " (population 1 size)\n";
@@ -100,10 +100,24 @@ int main (int argc, char *argv[]) {
     index.close();
 
     // PARSING THE 3D SFS
-    getline(sfs_file, line); // storing the SFS in a string
+    int window_number;
+    if (argc == 7) {
+        istringstream ss4(argv[6]); // convert window number argument to integer
+        if (!(ss4 >> window_number)) { // check that window number is correct
+            cout << "Invalid input " << argv[6] << " (window number)\n";
+            return 0; // terminate
+        }
+    } else {
+        window_number = 1; // default window number value (first window)
+    }
+    int i = 1; // count variable to extract the correct window
+    while (getline(sfs_file, line) && i!=window_number) { // store the correct SFS window in string
+        i+=1;
+    }
     line_to_vector(line, v); // parsing the string in a vector
     ifstream coordinates ("3D.coordinates"); // using the coordinates file as input
     sfs_parsing(coordinates, parsed_sfs, v); // writing SFS values in the indexed output
+    cout << "The parsed 3D SFS file contains the window number " << window_number << "\n";
 
     // CLEANING AND CLOSING FILES
     v.clear();
