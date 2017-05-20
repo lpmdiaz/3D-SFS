@@ -10,15 +10,15 @@ heightarg=as.numeric(args[4])
 if (length(args) < 1) { # help printout
 
   cat("Required arguments:\n")
-  cat("\tInput CLRT file path")
-  print("-> Output file name without extension")
-  print("Optional arguments:")
-  print("->pdf output width and height (recommended: 14 and 7)")
+  cat("\tInput CLRT file path\n")
+  cat("\tOutput file name without extension\n")
+  cat("Optional arguments:\n")
+  cat("\tpdf output width and height (recommended: 14 and 7)\n")
 
 } else { # rest of the program
   
   if (!file.exists(input)) { # checking that input file exists
-    stop("Error: input file does not exist")
+    stop("input file does not exist")
   }
 
   if (length(args) == 3) { # setting default pdf size values
