@@ -11,13 +11,13 @@ output=args[2]
 phiarg=as.numeric(args[3])
 thetaarg=as.numeric(args[4])
 
-if (length(args) == 1) { # help printout
+if (length(args) < 1) { # help printout
 
-  print("Required arguments:\n")
-  print("\tInput parsed 3D SFS file path\n")
-  print("\tOutput file name without extension\n")
-  print("Optional arguments:\n")
-  print("\t3D plot angles phi and theta (default 40 and 40)\n")
+  cat("Required arguments:\n")
+  cat("\tInput parsed 3D SFS file path\n")
+  cat("\tOutput file name without extension\n")
+  cat("Optional arguments:\n")
+  cat("\t3D plot angles phi and theta (default 40 and 40)\n")
 
 } else { # rest of the program
 
@@ -25,7 +25,7 @@ if (length(args) == 1) { # help printout
     stop("Error: input file does not exist")
   }
 
-  if (length(args) == 3) { # setting default angle values for the plot
+  if (length(args) <= 3) { # setting default angle values for the plot
     phiarg=40
     thetaarg=40
   }
@@ -57,7 +57,7 @@ if (length(args) == 1) { # help printout
   dev.off()
 
   # option to produce an interactive plot of the 3D SFS
-  choice <- readline(prompt="Produce an interactive 3D SFS plot? [y/n]\n")
+  choice <- readline(prompt="Produce an interactive 3D SFS plot? [y/n] ")
 
   if (choice == "y") {
 
