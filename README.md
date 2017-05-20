@@ -59,7 +59,11 @@ creates an indexed 3D SFS file called *parsed3Dsfs* of the 42nd window, with spe
 
 	Rscript plot3Dsfs.R parsed3Dsfs 3Dsfs 40 40
 
-does blah blah blah. Note that this program requires the *plot3D* R package.
+does blah blah blah. Note that this program requires the *plot3D* R package. Do
+
+	sudo Rscript ./plot3Dsfs.R [with the rest of the arguments]
+
+the first time to install the package if not already installed (also to install *gpl* package for interactive plotting).
 
 ### Rscript
 
