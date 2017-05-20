@@ -1,9 +1,5 @@
 # this program plots a parsed 3D SFS in a pdf (parsed 3D SFS as an output of parse3Dsfs)
 
-# install and load the plot3D package to easily plot 3D
-# data with an additional dimension as colour variable
-if(!require(plot3D)) {install.packages("plot3D"); require(plot3D)}
-
 #set arguments
 args=commandArgs(T)
 input=args[1]
@@ -21,6 +17,9 @@ if (length(args) < 1) { # help printout
 
 } else { # rest of the program
 
+  # install and load the plot3D package to easily plot 3D data with an additional dimension as colour variable
+  if(!require(plot3D)) {install.packages("plot3D", repos = "http://cran.us.r-project.org"); require(plot3D)}
+  
   if (!file.exists(input)) { # checking that input file exists
     stop("Error: input file does not exist")
   }
@@ -63,7 +62,7 @@ if (length(args) < 1) { # help printout
 
     # install and load packages for interactive plotting
     if(!require(rgl)) {install.packages("rgl"); require(rgl)}
-    if(!require(plot3Drgl)) {install.packages("plot3Drgl"); require(plot3Drgl)}
+    if(!require(plot3Drgl)) {install.packages("plot3Drgl", repos = "http://cran.us.r-project.org"); require(plot3Drgl)}
 
     # interactive plotting
     plotrgl()
