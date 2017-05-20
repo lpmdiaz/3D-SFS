@@ -9,7 +9,7 @@ heightarg=as.numeric(args[4])
 
 if (length(args) < 1) { # help printout
 
-  print("Required arguments:")
+  print(sprintf("Required arguments:\n"))
   print("    Input CLRT file path")
   print("    Output file name without extension")
   print("Optional arguments:")
