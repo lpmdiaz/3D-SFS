@@ -11,7 +11,7 @@ if (length(args) == 1) { # help printout
 
   print("Required arguments:\n")
   print("\tInput CLRT file path\n")
-  print("\tOutput file name\n")
+  print("\tOutput file name without extension\n")
   print("Optional arguments:\n")
   print("\tpdf output width and height (recommended: 14 and 7)\n")
 
