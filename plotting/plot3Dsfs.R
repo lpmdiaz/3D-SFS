@@ -30,7 +30,7 @@ if (length(args) < 1) { # help printout
   }
 
   # load 3D SFS data
-  mydata <- read.table("parsed.3D.SFS")
+  mydata <- read.table(input)
   x <- mydata$V1
   y <- mydata$V2
   z <- mydata$V3
