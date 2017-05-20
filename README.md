@@ -63,7 +63,7 @@ does blah blah blah. Note that this program requires the *plot3D* R package. Do
 
 	sudo Rscript ./plot3Dsfs.R [with the rest of the arguments]
 
-the first time to install the package if not already installed (also to install *gpl* package for interactive plotting).
+the first time to install the package if not already installed (also to install *rgl* and *plot3Drgl* packages for interactive plotting).
 
 ### Rscript
 
