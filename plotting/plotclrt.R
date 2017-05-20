@@ -9,8 +9,8 @@ heightarg=as.numeric(args[4])
 
 if (length(args) < 1) { # help printout
 
-  print(Required arguments:)
-  print("-> Input CLRT file path")
+  cat("Required arguments:\n")
+  cat("\tInput CLRT file path")
   print("-> Output file name without extension")
   print("Optional arguments:")
   print("->pdf output width and height (recommended: 14 and 7)")
