@@ -14,3 +14,6 @@ all: $(LIST)
 
 $(LIST):
 	$(CCX) $(CFLAGS) $@.cpp -o $@ -std=c++11
+
+clean:
+	@rm -rf $(LIST) *.o
