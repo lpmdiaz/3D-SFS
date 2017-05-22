@@ -14,7 +14,7 @@ Note: this software is integrated within a pipeline allowing the simulation of g
 On Unix machines, you can install and compile the software by doing:
 
 	git clone https://github.com/lpmdiaz/pop3D
-	cd ./pop3D
+	cd pop3D
 	make
 
 ### Other operating systems
