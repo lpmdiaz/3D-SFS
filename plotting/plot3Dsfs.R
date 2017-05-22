@@ -17,8 +17,8 @@ if (length(args) < 1) { # help printout
 
 } else { # rest of the program
 
-  # install and load the plot3D package to easily plot 3D data with an additional dimension as colour variable
-  if(!require(plot3D)) {install.packages("plot3D", repos = "http://cran.us.r-project.org"); require(plot3D)}
+  # load the plot3D package to easily plot 3D data with an additional dimension as colour variable
+  if(!require(plot3D)) {require(plot3D)}
   
   if (!file.exists(input)) { # checking that input file exists
     stop("Error: input file does not exist")
@@ -61,9 +61,9 @@ if (length(args) < 1) { # help printout
 
   if (choice == "y") {
 
-    # install and load packages for interactive plotting
-    if(!require(rgl)) {install.packages("rgl", repos = "http://cran.us.r-project.org"); require(rgl)}
-    if(!require(plot3Drgl)) {install.packages("plot3Drgl", repos = "http://cran.us.r-project.org"); require(plot3Drgl)}
+    # load rgl and plot3D rgl packages for interactive plotting
+    if(!require(rgl)) {require(rgl)}
+    if(!require(plot3Drgl)) {require(plot3Drgl)}
 
     # interactive plotting
     plotrgl()
