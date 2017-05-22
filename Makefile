@@ -13,4 +13,4 @@ LIST=pop3Dclrt $(DIR)/parse3Dsfs
 all: $(LIST)
 
 $(LIST):
-	$(CCX) $(CFLAGS) $@.cpp -o $@
+	$(CCX) $(CFLAGS) $@.cpp -o $@ -std=c++11
