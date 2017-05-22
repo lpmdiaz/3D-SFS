@@ -2,7 +2,7 @@
 CCX ?= g++
 
 # compiler options
-CFLAGS = -Wall
+CFLAGS = -O3 -Wall
 
 # set second directory
 DIR=./plotting
