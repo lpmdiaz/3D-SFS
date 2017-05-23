@@ -1,0 +1,5 @@
+I tried updating the repository and the makefile based on your tips (creating sorted folders).
+I now have two issues I'm not sure how to deal with:
+
+-> I don't know how to make sure there's a /bin folder if it isn't included in the repo (does it have to be created by the makefile?)
+-> The make clean now doesn't remove parse3Dsfs while it does clean pop3Dclrt... I have no idea why that is.
