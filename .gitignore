@@ -1,4 +1,3 @@
-pop3Dclrt
-/plotting/parse3Dsfs
-/plotting/3D.coordinates
+/scripts/3D.coordinates
 /data/*
+/bin/*
