@@ -11,7 +11,7 @@ all: $(LIST)
 
 $(LIST):
 	mkdir bin
-	$(CCX) $(CFLAGS) /source/$@.cpp -o bin/$@ -std=c++11
+	$(CCX) $(CFLAGS) ./source/$@.cpp -o ./bin/$@ -std=c++11
 
 clean:
-	@rm -rf /bin/* #*.o
+	@rm -rf ./bin/$(LIST) *.o
