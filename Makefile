@@ -16,4 +16,4 @@ $(LIST):
 	$(CCX) $(CFLAGS) ./source/$@.cpp -o bin/$@ -std=c++11
 
 clean:
-	@rm -rf $(LIST) *.o
+	@rm -rf .bin/$(LIST) *.o
