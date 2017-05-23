@@ -13,7 +13,7 @@ LIST=pop3Dclrt parse3Dsfs
 all: $(LIST)
 
 $(LIST):
-	$(CCX) $(CFLAGS) .source/$@.cpp -o bin/$@ -std=c++11
+	$(CCX) $(CFLAGS) ./source/$@.cpp -o bin/$@ -std=c++11
 
 clean:
 	@rm -rf bin/$(LIST) *.o
