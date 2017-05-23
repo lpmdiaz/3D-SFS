@@ -5,15 +5,15 @@ CCX ?= g++
 CFLAGS = -O3 -Wall
 
 # set second directory
-DIR=./plotting
+DIR=./source
 
 # list programs
-LIST=pop3Dclrt $(DIR)/parse3Dsfs
+LIST=$(DIR)/pop3Dclrt $(DIR)/parse3Dsfs
 
 all: $(LIST)
 
 $(LIST):
-	$(CCX) $(CFLAGS) $@.cpp -o $@ -std=c++11
+	$(CCX) $(CFLAGS) $@.cpp -o bin/$@ -std=c++11
 
 clean:
-	@rm -rf $(LIST) *.o
+	@rm -rf bin/$(LIST) *.o
