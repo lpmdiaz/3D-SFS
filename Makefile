@@ -4,16 +4,14 @@ CCX ?= g++
 # compiler options
 CFLAGS = -O3 -Wall
 
-# set second directory
-#DIR=./source
-
 # list programs
-LIST=pop3Dclrt parse3Dsfs
+LIST = pop3Dclrt parse3Dsfs
 
 all: $(LIST)
 
 $(LIST):
-	$(CCX) $(CFLAGS) ./source/$@.cpp -o bin/$@ -std=c++11
+	mkdir bin
+	$(CCX) $(CFLAGS) /source/$@.cpp -o bin/$@ -std=c++11
 
 clean:
-	@rm -rf ./bin/* *.o
+	@rm -rf /bin/* #*.o
