@@ -10,8 +10,7 @@ LIST = pop3Dclrt parse3Dsfs
 all: $(LIST)
 
 $(LIST):
-	mkdir bin
 	$(CCX) $(CFLAGS) ./source/$@.cpp -o ./bin/$@ -std=c++11
 
 clean:
-	@rm -rf ./bin/$(LIST) *.o
+	@rm -rf bin/$(LIST) *.o
