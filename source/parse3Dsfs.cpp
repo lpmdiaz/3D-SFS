@@ -45,8 +45,8 @@ void sfs_parsing (ifstream & index, ofstream & output, vector<double> & v) {
 void info() {
     fprintf(stderr,"Required arguments:\tInput file path\n");
     fprintf(stderr,"\t\t\tOutput file name\n");
-    fprintf(stderr,"\t\t\tSize of each population (three integers)\n");
-    fprintf(stderr,"Optional argument:\tSpecific window to parse\n");
+    fprintf(stderr,"\t\t\tNumber of diploid individuals in each population (three integers)\n");
+    fprintf(stderr,"Optional argument:\tSpecific window to parse (input is window number)\n");
 }
 
 
