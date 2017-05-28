@@ -78,5 +78,5 @@ An early implementation of the CLRT was done in R and can be found in the **scri
 
 ## Examples
 
-+ The *simul.sh* script in the *examples* folder uses MSMS and ANGSD to simulate sequencing data and the corresponding 3D SFS.
-+ The *test.sh* script in the *test* folder simulates 3D SFS and PBS values under different selection coefficients and times.
++ The *simul.sh* script in the **examples** folder uses MSMS and ANGSD to simulate sequencing data and its 3D SFS.
++ The *test.sh* script in the **test** folder simulates 3D SFS and PBS values under different selection coefficients and times.
