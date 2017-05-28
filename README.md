@@ -11,11 +11,15 @@ Note: this software is integrated within a pipeline allowing the simulation of g
 
 ### Unix
 
-On Unix machines, you can install and compile the software by doing:
+On Unix machines, you can install and compile the software by doing
 
 	git clone https://github.com/lpmdiaz/pop3D
 	cd pop3D
 	make
+
+If needed, you can remove the compiled files by doing
+
+	make clean
 
 ### Other operating systems
 
@@ -25,21 +29,21 @@ We would recommend using a virtual machine running a Unix OS (such as [Oracle VM
 
 ### Composite likelihood ratio test
 
-With the **pop3D** repository in the path, do
+With the **pop3D/bin** repository in the path, do
 
 	./pop3Dclrt
 
-to display information on the arguments the software needs. As an example, the call
+to display information on the arguments the software needs. For instance, the call
 
 	./pop3Dclrt ./data/ms.3d.sfs ./data/ms.3d.windows.sfs clrt
 
-runs the program with the input files *ms.3d.sfs* and *ms.3d.windows.sfs* located in the **Data** folder, and outputs the test result in the *clrt* file. This file can then be plotted as described in the following section.
+runs the program with the input files *ms.3d.sfs* and *ms.3d.windows.sfs* located in a **data** folder, and outputs the test result in the *clrt* file. This file can then be plotted as described in the following section.
 
-### Plotting
+### Plotting the data
 
 #### CLRT
 
-The *plotclrt.R* script takes the output of *pop3Dclrt* as an input and plots the CLRT in a pdf. This script takes in arguments the input CLRT file and the output pdf name (note: the extension will be added automatically), as well as the pdf width and height parameters. As an example, the call
+The *plotclrt.R* script in the **scripts** folder takes the output of *pop3Dclrt* as an input and plots the CLRT in a pdf. This script takes in arguments the input CLRT file and the output pdf name (note: the extension will be added automatically), as well as the pdf width and height parameters. For instance, the call
 
 	Rscript plotclrt.R ../clrt CLRT 14 7
 
@@ -47,28 +51,32 @@ plots the CLRT stored in the *clrt* file (in the parent directory) to the *CLRT.
 
 #### 3D SFS
 
-Before plotting the 3D SFS with the R file, the SFS file needs to be parsed. The *parse3Dsfs* program builds an index of 3D coordinates and fills it wth the corresponding SFS values. The call
+Before plotting the 3D SFS with the R file, the SFS file needs to be parsed. The *parse3Dsfs* program in the **bin** folder builds an index of 3D coordinates and fills it wth the corresponding SFS values. The call
 
 	./parse3Dsfs
 
-will display information on the arguments this program needs (assuming the path now contains the **plotting** folder). As an example, the call
+will display information on the arguments this program needs (assuming the path now contains the **plotting** folder). For instance, the call
 
 	./parse3Dsfs ../data/ms.3d.sfs parsed3Dsfs 10 10 10 42
 
-creates an indexed 3D SFS file called *parsed3Dsfs* of the 42nd window, with specified population sizes. This file can now be used to plot the 3D SFS using the *plot3Dsfs.R* program, which takes as input the parsed 3D SFS, the output pdf name and optionally the two phi and theta angles (note: the extension will be added automatically). As an example, the call
+creates an indexed 3D SFS file called *parsed3Dsfs* of the 42nd window, with specified population sizes. (Note that this script produces a temporary *3D-coordinates* file used to build the index.) The parsed 3D SFS file can now be used to plot the 3D SFS using the *plot3Dsfs.R* program in the **scripts** folder, which takes as input the parsed 3D SFS, the output pdf name and optionally the two phi and theta angles (note: the extension will be added automatically). For instance, the call
 
 	Rscript plot3Dsfs.R parsed3Dsfs 3Dsfs 40 40
 
-does blah blah blah. Note that this program requires the following packages:
+plots the indexed 3D SFS stored in the *parsed3Dsfs* file to the *3Dsfs.pdf* file (with dimensions of height and width = 40, which are the default values). Note that this program requires the following packages:
 
 + *plot3D*, which makes plotting 3D data easier in this case by using a colour scale as an extra dimension;
 + *rgl* and *plot3Drgl*, which allow the visualisation of an interactive version of the previous plot.
 
+Please ensure you have all the required packages installed before you run the scripts.
 
 ### Rscript
+
+An early implementation of the CLRT was done in R and can be found in the **scripts** folder (*clrt3pop.R*). To use it, do
 
 	Rscript clrt3pop.R Data/ms.3d.windows.sfs Data/ms.3d.sfs > CLRT.txt
 
 ## Examples
 
-Provide simulated files.
++ The *simul.sh* script in the *examples* folder uses MSMS and ANGSD to simulate sequencing data and the corresponding 3D SFS.
++ The *test.sh* script in the *test* folder simulates 3D SFS and PBS values under different selection coefficients and times.
