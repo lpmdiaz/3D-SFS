@@ -27,6 +27,8 @@ We would recommend using a virtual machine running a Unix OS (such as [Oracle VM
 
 ## Use
 
+*Note that calling a program with no argument will display details on the input and output files and on the (optional) arguments it takes in to run.*
+
 ### Composite likelihood ratio test
 
 With the **pop3D/bin** repository in the path, do
