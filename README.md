@@ -5,7 +5,7 @@ This software detects positive selection in three populations using the Composit
 + a *global* SFS file containing the SFS of the whole genomic region;
 + a *windows* SFS file containing the SFS of windows of the global file. This approach allows to perform the CLRT test as a sliding window.
 
-Note: this software is integrated within a pipeline allowing the simulation of genomic data (with [MSMS](http://www.mabs.at/ewing/msms/index.shtml)) and the estimation of the 3D SFS (both global and windows, with [ANGSD](http://www.popgen.dk/angsd/index.php/ANGSD)). This is described in the pipeline file.
+Note: this software is integrated within a pipeline allowing the simulation of genomic data (with [MSMS](http://www.mabs.at/ewing/msms/index.shtml)) and the estimation of the 3D SFS (both global and windows, with [ANGSD](http://www.popgen.dk/angsd/index.php/ANGSD)). An example of how to use this pipeline is given in the *simul.sh* script in the **examples** folder.
 
 ## Set up
 
@@ -57,7 +57,7 @@ Before plotting the 3D SFS with the R file, the SFS file needs to be parsed. The
 
 	./parse3Dsfs
 
-will display information on the arguments this program needs (assuming the path now contains the **plotting** folder). For instance, the call
+will display information on the arguments this program needs (assuming the path contains the **bin** folder). For instance, the call
 
 	./parse3Dsfs ../data/ms.3d.sfs parsed3Dsfs 10 10 10 42
 
@@ -65,7 +65,7 @@ creates an indexed 3D SFS file called *parsed3Dsfs* of the 42nd window, with spe
 
 	Rscript plot3Dsfs.R parsed3Dsfs 3Dsfs 40 40
 
-plots the indexed 3D SFS stored in the *parsed3Dsfs* file to the *3Dsfs.pdf* file (with dimensions of height and width = 40, which are the default values). Note that this program requires the following packages:
+plots the indexed 3D SFS stored in the *parsed3Dsfs* file to the *3Dsfs.pdf* file (with height and width dimensions of 40, which are the default values). Note that this program requires the following packages:
 
 + *plot3D*, which makes plotting 3D data easier in this case by using a colour scale as an extra dimension;
 + *rgl* and *plot3Drgl*, which allow the visualisation of an interactive version of the previous plot.
@@ -80,5 +80,5 @@ An early implementation of the CLRT was done in R and can be found in the **scri
 
 ## Examples
 
-+ The *simul.sh* script in the **examples** folder uses MSMS and ANGSD to simulate sequencing data and its 3D SFS.
-+ The *test.sh* script in the **test** folder simulates 3D SFS and PBS values under different selection coefficients and times.
++ The *simul.sh* script in the **examples** folder uses MSMS and ANGSD to simulate sequencing data and its 3D SFS, then calculates the PBS and CLRT values under different parameters.
++ The *test.sh* script in the **test** folder simulates CLRT and PBS values to assess their correlation.
