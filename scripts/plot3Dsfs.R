@@ -49,7 +49,7 @@ if (length(args) < 1) { # help printout
 
   # 3D SFS PLOTTING
   # colvar = NULL prevents colouring from z var
-  # can add an alpha paramter between 0 and 1 for controlling transparency
+  # can add an alpha parameter between 0 and 1 for controlling transparency
   scatter3D(x, y, z, colvar = log10(sfs), NAcol = rgb(1,1,1, alpha = 0), pch = 15, phi = phiarg,
           theta = thetaarg, xlab = "population 1", ylab = "population 2", zlab = "population 3")
 
