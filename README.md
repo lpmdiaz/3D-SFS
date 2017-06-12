@@ -17,7 +17,11 @@ On Unix machines, you can install and compile the software by doing
 	cd pop3D
 	make
 
-If needed, you can remove the compiled files by doing
+If the *make* command does not work, you might need to manuually create a *bin* folder. Simply do
+
+	mkdir bin
+
+and try using the *make* command again. If needed, you can remove the compiled files by doing
 
 	make clean
 
